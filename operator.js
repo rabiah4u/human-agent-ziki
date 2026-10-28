@@ -118,6 +118,7 @@
     const working = state.agents.filter((a) => a.health !== "idle").length;
     const doneN = state.done.length;
     const need = state.needs.length;
+    $("#inbox-count").textContent = need; $("#need-count").textContent = need; $("#ag-line").textContent = state.agents.length + " agents, " + working + " working";
     $("#strip").innerHTML =
       `<div class="stat ${need ? "need" : "calm"}"><span class="v">${need}</span><span class="l">${need ? (need === 1 ? "decision waiting on you" : "decisions waiting on you") : "Nothing needs you"}</span></div>` +
       `<div class="stat"><span class="v">${working}</span><span class="l">of ${state.agents.length} agents working</span></div>` +
